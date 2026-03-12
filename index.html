@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="images/rsdlogo.png">
+
+<title>RSD - Human Resource Management Consultancy</title>
+</head>
+
+<body>
+<div class="wrapper">
+
+<nav class="nav">
+  <div class="nav-logo">
+    <img src="images/rsdlogo.png" class="logo" alt="RSD Logo">
+    <span class="logo-text">RSD</span>
+  </div>
+
+  <div class="nav-menu" id="navMenu">
+    <ul>
+      <li><a href="index.html" class="link active">Home</a></li>
+      <li><a href="about.html" class="link">About Us</a></li>
+      <li><a href="services.html" class="link">Services</a></li>
+      <li><a href="mission.html" class="link">Mission & Vision</a></li>
+      <li><a href="contact.html" class="link">Contact</a></li>
+    </ul>
+  </div>
+
+  <div class="nav-button">
+    <button class="btn white-btn" onclick="location.href='login.html'">Sign In</button>
+    <button class="btn" onclick="location.href='register.html'">Sign Up</button>
+  </div>
+
+  <div class="nav-menu-btn">
+    <i class="bx bx-menu" onclick="toggleMenu()"></i>
+  </div>
+</nav>
+
+<section class="home">
+  <div class="home-content">
+    <h1>RSD</h1>
+    <h1>Human Resource <br> Management Consultancy</h1>
+    <p>Recruitment Solutions Department.</p>
+    <a href="contact.html" class="home-btn">Contact Us</a>
+  </div>
+</section>
+
+</div>
+
+<!-- ✅ NAV MENU FUNCTION (REQUIRED) -->
+<script>
+function toggleMenu() {
+  document.getElementById("navMenu").classList.toggle("responsive");
+}
+</script>
+
+</body>
+</html>

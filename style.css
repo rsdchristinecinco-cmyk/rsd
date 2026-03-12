@@ -1,0 +1,410 @@
+/* =========================
+   STYLE CSS
+   ========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-image: url(images/OG.jpg);
+    background-repeat: no-repeat;
+    background-position: 0 -115px;
+    background-size: 100% auto;
+}
+
+.wrapper {
+    min-height: 100vh;
+    background: rgba(39, 39, 39, 0.7);
+    padding-top: 100px; /* navbar offset */
+}
+
+/* =========================
+   NAVBAR
+   ========================= */
+
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: linear-gradient(rgba(39,39,39,0.6), transparent);
+    z-index: 100;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    height: 45px;
+}
+
+.logo-text {
+    font-size: 22px;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.nav-logo img.logo {
+    margin-top: 10px;
+    height: 50px;
+    width: auto;
+}
+
+.nav-logo p {
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.nav-menu ul {
+    display: flex;
+}
+
+.nav-menu ul li {
+    list-style: none;
+}
+
+.nav-menu ul li .link {
+    position: relative;
+    text-decoration: none;
+    font-weight: 500;
+    color: white;
+    padding-bottom: 15px;
+    margin: 0 25px;
+    transition: color 0.3s ease;
+}
+
+/* animated underline */
+.nav-menu ul li .link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    width: 0;
+    height: 2px;
+    background-color: #ffffff;
+    transition: width 0.3s ease;
+}
+
+.nav-menu ul li .link:hover {
+    color: #f4a261;
+    transform: translateY(-2px);
+}
+
+.nav-menu ul li .link:hover::after,
+.nav-menu ul li .link.active::after {
+    width: 100%;
+}
+
+.nav-button .btn {
+    width: 130px;
+    height: 40px;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-button .btn:hover {
+    color: #f4a261;
+    transform: translateY(-2px);
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+#RegisterBtn {
+    margin-left: 15px;
+}
+
+.btn.white-btn {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.btn.white-btn:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* =========================
+   FORMS
+   ========================= */
+
+.nav-menu-btn {
+    display: none;
+}
+
+.form-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 510px;
+    height: 450px;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.login-container,
+.register-container {
+    position: absolute;
+    width: 100%;
+    max-width: 500px;
+    flex-direction: column;
+    transition: 0.5s ease-in-out;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.login-container {
+    left: 1px;
+}
+
+.register-container {
+    right: -520px;
+}
+
+.top span {
+    color: white;
+    font-size: small;
+    padding: 10px 0;
+}
+
+.top span a {
+    font-weight: 500;
+    color: white;
+    margin-left: 5px;
+}
+
+header {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    padding: 10px 0 30px;
+}
+
+.two-forms {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.input-field {
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    height: 45px;
+    width: 100%;
+    padding: 0 15px 0 45px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.input-field:hover,
+.input-field:focus {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+::-webkit-input-placeholder {
+    color: white;
+}
+
+.input-box i {
+    position: absolute;
+    top: 50%;
+    left: 18px;
+    transform: translateY(-50%);
+    color: white;
+}
+
+.submit {
+    font-size: 15px;
+    font-weight: 500;
+    color: black;
+    height: 45px;
+    width: 100%;
+    border: none;
+    border-radius: 300px;
+    background: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.submit:hover {
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 1px 5px 7px rgba(0, 0, 0, 0.2);
+}
+
+.two-col {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: small;
+    margin-bottom: 15px;
+}
+
+.two-col .one {
+    display: flex;
+    gap: 5px;
+}
+
+.two label a {
+    text-decoration: none;
+    color: white;
+}
+
+.two label a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   HOME SECTION
+   ========================= */
+
+.home {
+    min-height: calc(100vh - 100px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    color: #f4a261;
+    padding: 40px 60px;
+}
+
+.home-content {
+    max-width: 900px;
+}
+
+.home-content h1 {
+    font-family: 'Marcellus', serif;
+    font-size: 45px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.home-content h1:first-child {
+    font-size: 70px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.home-content h1:nth-child(2) {
+    color: #ffffff;
+    font-size: 60px;
+    font-weight: 400;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.home-content p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.home-btn {
+    padding: 12px 30px;
+    background: rgba(255,255,255,0.7);
+    color: black;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 500;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease, background 0.3s ease;
+}
+
+.home-btn:hover {
+    color: #f4a261;              /* same hover color */
+    background: rgba(255,255,255,0.5);
+    transform: translateY(-2px); /* same lift effect */
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media only screen and (max-width: 786px) {
+
+    .nav-button {
+        display: none;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: -800px;
+        display: flex;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.2);
+        width: 100%;
+        height: 90vh;
+        backdrop-filter: blur(20px);
+        transition: 0.3s;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-menu-btn {
+        display: block;
+    }
+
+    .nav-menu-btn i {
+        color: white;
+        font-size: 25px;
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .nav-menu-btn i:hover {
+        background: rgba(255, 255, 255, 0.15);
+    }
+}
+
+@media only screen and (max-width: 540px) {
+
+    .form-box {
+        width: 100%;
+        height: 500px;
+    }
+
+    .register.container,
+    .login-container {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .register-container .two-forms {
+        flex-direction: column;
+        gap: 0;    
+    }
+}

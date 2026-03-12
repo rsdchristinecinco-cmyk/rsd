@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Marcellus&display=swap');
+
+body{
+background:url(images/OG.jpg) no-repeat 0 -115px/100% auto;
+font-family:'Poppins',sans-serif;
+}
+
+.wrapper{
+min-height:100vh;
+background:rgba(39,39,39,0.75);
+padding-top:100px;
+}
+
+section{
+padding:90px 10%;
+color:white;
+max-width:1000px;
+margin:auto;
+}
+
+/* SECTION TITLE */
+
+.section-title{
+font-family:'Marcellus',serif;
+font-size:34px;
+text-align:center;
+margin-bottom:50px;
+}
+
+/* ABOUT HERO */
+
+.about-company{
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+gap:60px;
+max-width: 1500px;
+min-height:400px;
+padding-top:30px;
+}
+
+/* CARD */
+
+.about-card{
+background:rgba(255,255,255,0.08);
+padding:40px;
+border-radius:18px;
+backdrop-filter:blur(8px);
+box-shadow:0 10px 40px rgba(0,0,0,0.3);
+max-width:520px;
+}
+
+
+.about-card h1{
+font-size:40px;
+margin-bottom:15px;
+}
+
+.about-card p{
+line-height:1.7;
+margin-bottom:15px;
+}
+
+/* LOGO */
+
+.about-logo{
+width:90px;
+margin-bottom:20px;
+}
+
+/* STATS */
+
+.about-stats{
+display:flex;
+gap:30px;
+justify-content:flex-start;
+margin-top:30px;
+}
+
+.stat{
+background:rgba(255,255,255,0.1);
+padding:25px;
+border-radius:14px;
+text-align:center;
+min-width:130px;
+transition:transform .3s ease;
+}
+
+.stat:hover{
+transform:translateY(-6px);
+}
+
+.stat h3{
+font-size:32px;
+color:#f4a261;
+margin-bottom:5px;
+}
+
+.stat p{
+font-size:14px;
+opacity:.8;
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+
+/* CORE PILLARS */
+
+.pillars{
+position:relative;
+overflow:hidden;
+/* remove extra space above this section - formerly margin-top:80px; */
+margin-top:0;
+backdrop-filter:blur(12px);
+/* make it full width */
+max-width: 100%;
+width: 100%;
+/* keep internal padding for content spacing */
+padding: 90px 10%;
+}
+
+.bg-video{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-2;
+}
+
+
+/* DARK OVERLAY */
+
+.pillars::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.55);
+z-index:-1;
+}
+
+.pillar-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:30px;
+}
+
+.pillar-card{
+background:rgba(255,255,255,0.12);
+padding:70px;
+border-radius:18px;
+text-align:center;
+transition:all .3s ease;
+backdrop-filter:blur(8px);
+}
+
+.pillar-card:hover{
+transform:translateY(-8px);
+}
+
+.pillar-card i{
+font-size:42px;
+color:#f4a261;
+margin-bottom:18px;
+}
+
+/* CEO */
+
+.ceo{
+margin-top:80px;
+display:flex;
+justify-content:center;
+gap:50px;
+
+max-width:1300px;   /* allow wider space */
+margin-left:auto;
+margin-right:auto;
+}
+
+.ceo-card{
+display:flex;
+align-items:center;
+gap:30px;
+
+background:rgba(0,0,0,0.35);
+border-radius:24px;
+
+width:100%;
+max-width:1000px;  /* wide card */
+
+padding:25px 40px; /* smaller vertical padding */
+}
+
+.ceo-img img{
+  width:110px;
+  border-radius:50%;
+}
+
+.ceo-info{
+max-width:700px;
+}
+
+.ceo-info h2{
+  color:#f4a261;
+  margin-bottom:6px;
+}
+
+.ceo-info h3{
+  font-size:26px;
+  margin-bottom:12px;
+}
+
+.ceo-info p{
+  line-height:1.7;
+  opacity:.9;
+}
+
+/* SUPPORT DEPARTMENT */
+
+.support-team{
+margin-top:40px; /* correct syntax and provide spacing above HR section */
+text-align:center;
+}
+
+.support-grid{
+display:flex;
+gap:30px;
+flex-wrap:nowrap;
+overflow:hidden;
+}
+
+.support-card{
+position:relative;
+flex:0 0 220px;
+height:260px;
+border-radius:16px;
+overflow:hidden;
+cursor:pointer;
+transition:transform .3s ease;
+}
+
+.support-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.support-card:hover{
+transform:scale(1.05);
+}
+
+.card-info{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+padding:20px;
+
+background:linear-gradient(
+transparent,
+rgba(0,0,0,0.85)
+);
+
+transform:translateY(100%);
+transition:transform .35s ease;
+}
+
+.support-card:hover .card-info{
+transform:translateY(0);
+}
+
+.card-info h4{
+margin:0;
+font-size:18px;
+}
+
+.card-info p{
+margin:4px 0 0;
+font-size:14px;
+opacity:.8;
+}
+
+/* SLIDER */
+
+.slider-wrapper{
+position:relative;
+max-width:900px;
+margin:auto;
+}
+
+
+.slider{
+display:flex;
+gap:30px;
+overflow:hidden;
+scroll-behavior:smooth;
+}
+
+.slide-btn{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+
+width:42px;
+height:42px;
+
+background:rgba(0,0,0,0.65);
+border:none;
+border-radius:50%;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+color:white;
+font-size:26px;
+cursor:pointer;
+
+transition:.3s;
+}
+
+.slide-btn:hover{
+background:#f4a261;
+}
+
+.slide-btn.left{
+left:-50px;
+}
+
+.slide-btn.right{
+right:-50px;
+}
+
+/* MODAL */
+
+.team-modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.7);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+.modal-content{
+background:#1f1f1f;
+padding:35px;
+border-radius:20px;
+max-width:420px;
+text-align:center;
+position:relative;
+}
+
+.modal-content img{
+width:120px;
+border-radius:50%;
+margin-bottom:15px;
+}
+
+.close{
+position:absolute;
+top:15px;
+right:20px;
+font-size:24px;
+cursor:pointer;
+}
+
+/* SCROLL ANIMATION */
+
+.reveal{
+opacity:0;
+transform:translateY(60px);
+transition:all .8s ease;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.about-company{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.ceo{
+flex-direction:column;
+}
+
+.ceo-card{
+flex-direction:column;
+text-align:center;
+}
+
+.ceo-img img{
+margin-bottom:15px;
+}
+
+}
