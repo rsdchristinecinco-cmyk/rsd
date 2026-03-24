@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/rsdlogo.png">
+
+  <title>Contact | RSD</title>
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <!-- NAVBAR -->
+    <nav class="nav">
+      <div class="nav-logo">
+        <img src="images/rsdlogo.png" class="logo" alt="RSD Logo">
+        <span class="logo-text">RSD</span>
+      </div>
+
+      <div class="nav-menu" id="navMenu">
+        <ul>
+          <li><a href="index.html" class="link">Home</a></li>
+          <li><a href="about.html" class="link">About Us</a></li>
+          <li><a href="services.html" class="link">Services</a></li>
+          <li><a href="missionvission.html" class="link">Mission & Vision</a></li>
+          <li><a href="contact.html" class="link active">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-button">
+        <button class="btn white-btn" onclick="location.href='login.html'">Sign In</button>
+        <button class="btn" onclick="location.href='register.html'">Sign Up</button>
+      </div>
+
+      <div class="nav-menu-btn">
+        <i class="bx bx-menu" onclick="toggleMenu()"></i>
+      </div>
+    </nav>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section">
+      <div class="contact-inner">
+        <div class="contact-left">
+          <div class="contact-label">GET IN TOUCH</div>
+          <h2 class="contact-title">
+            Let's Start a<br>
+            <span class="highlight">Conversation</span>
+          </h2>
+          <p class="contact-desc">
+            Whether you have a question about hiring, partnerships, or our services, we’re here to help. Share your message and we’ll respond as soon as possible.
+          </p>
+
+          <div class="info-cards">
+            <div class="info-card">
+              <div class="info-icon"><i class="bx bx-envelope"></i></div>
+              <div>
+                <div class="info-title">Email</div>
+                <div class="info-text">rsdhrmc@gmail.com</div>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon"><i class="bx bx-map"></i></div>
+              <div>
+                <div class="info-title">Location</div>
+                <div class="info-text">Rodriguez, Rizal</div>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon"><i class="bx bx-time-five"></i></div>
+              <div>
+                <div class="info-title">Response Time</div>
+                <div class="info-text">Within 24 hours</div>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon"><i class="bx bxl-facebook"></i></div>
+              <div>
+                <div class="info-title">Social</div>
+                <div class="info-text">facebook.com/rsdrecruitment</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-right">
+          <div class="contact-card">
+            <div class="contact-card-header">
+              <h3>SEND US A MESSAGE</h3>
+            </div>
+            <form class="contact-form" id="contact-form">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="sr-only" for="contact-name">Name</label>
+                  <input id="contact-name" name="from_name" type="text" placeholder="Your Name" required />
+                </div>
+                <div class="form-group">
+                  <label class="sr-only" for="contact-email">Email</label>
+                  <input id="contact-email" name="from_email" type="email" placeholder="Your Email" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="contact-message">Message</label>
+                <textarea id="contact-message" name="message" rows="5" placeholder="Your Message" required></textarea>
+              </div>
+              <button type="submit" class="submit-btn">
+                SEND MESSAGE <i class="bx bx-right-arrow-alt"></i>
+              </button>
+            </form>
+            <div id="form-status" class="form-status"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    function toggleMenu() {
+      document.getElementById('navMenu').classList.toggle('responsive');
+    }
+
+    // EmailJS setup
+    (function() {
+      emailjs.init('VFdRrlq_62S0zHcpW'); // Replace with your EmailJS public key
+    })();
+
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const status = document.getElementById('form-status');
+      status.textContent = 'Sending...';
+      status.style.color = '#f4a261';
+
+      emailjs.sendForm('service_jwejgt5', 'template_aakh6nf', this)
+        .then(function() {
+          status.textContent = 'Message sent successfully!';
+          status.style.color = '#4CAF50';
+          document.getElementById('contact-form').reset();
+        }, function(error) {
+          status.textContent = 'Failed to send message. Please try again.';
+          status.style.color = '#f44336';
+          console.error('EmailJS error:', error);
+        });
+    });
+  </script>
+</body>
+</html>

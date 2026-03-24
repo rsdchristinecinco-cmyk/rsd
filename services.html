@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="services.css">
+<link rel="icon" href="images/rsdlogo.png">
+
+<title>RSD - Services</title>
+</head>
+
+<body class="services-page">
+<div class="wrapper">
+
+<nav class="nav">
+  <div class="nav-logo">
+    <img src="images/rsdlogo.png" class="logo" alt="RSD Logo">
+    <span class="logo-text">RSD</span>
+  </div>
+
+  <div class="nav-menu" id="navMenu">
+    <ul>
+      <li><a href="index.html" class="link">Home</a></li>
+      <li><a href="about.html" class="link">About Us</a></li>
+      <li><a href="services.html" class="link active">Services</a></li>
+      <li><a href="missionvission.html" class="link">Mission & Vision</a></li>
+      <li><a href="contact.html" class="link">Contact</a></li>
+    </ul>
+  </div>
+
+  <div class="nav-button">
+    <button class="btn white-btn" onclick="location.href='login.html'">Sign In</button>
+    <button class="btn" onclick="location.href='register.html'">Sign Up</button>
+  </div>
+
+  <div class="nav-menu-btn">
+    <i class="bx bx-menu" onclick="toggleMenu()"></i>
+  </div>
+</nav>
+
+<!-- What We Offer Section -->
+<section class="what-we-offer">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">WHAT WE OFFER</span>
+      <h1 class="section-title">
+        <span class="title-white">Tailored Recruitment</span>
+        <span class="title-gradient gold">Solutions</span>
+      </h1>
+      <p class="section-subtitle">
+        Strategic hiring solutions designed to drive growth and connect exceptional talent with visionary organizations.
+      </p>
+    </div>
+
+    <div class="offer-cards">
+      <div class="offer-card" data-card="1">
+        <div class="card-number">01</div>
+        <div class="card-icon">
+          <i class='bx bx-briefcase'></i>
+        </div>
+        <h3>EXECUTIVE SEARCH</h3>
+        <p>
+          Strategic recruitment for senior leadership and specialized roles, connecting top-tier talent with organizational vision and culture.
+        </p>
+        <ul>
+          <li>C-Level Positions</li>
+          <li>Specialized Roles</li>
+          <li>Strategic Hiring</li>
+        </ul>
+        <button class="learn-more">Learn More</button>
+      </div>
+
+      <div class="offer-card" data-card="2">
+        <div class="card-number">02</div>
+        <div class="card-icon">
+          <i class='bx bx-group'></i>
+        </div>
+        <h3>VOLUME HIRING</h3>
+        <p>
+          Scalable recruitment solutions for high-volume positions, ensuring quality and efficiency across large-scale hiring initiatives.
+        </p>
+        <ul>
+          <li>Scalable Solutions</li>
+          <li>Efficient Process</li>
+          <li>High-Volume Hiring</li>
+        </ul>
+        <button class="learn-more">Learn More</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ✅ NAV MENU FUNCTION (REQUIRED) -->
+<script>
+function toggleMenu() {
+  document.getElementById("navMenu").classList.toggle("responsive");
+}
+</script>
+
+</body>
+</html>

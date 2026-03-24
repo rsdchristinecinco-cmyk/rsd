@@ -2,12 +2,12 @@
 
 body{
 background:url(images/OG.jpg) no-repeat 0 -115px/100% auto;
-font-family:'Poppins',sans-serif;
+font-family:'Marcellus',serif;
 }
 
 .wrapper{
 min-height:100vh;
-background:rgba(39,39,39,0.75);
+background: #111827;
 padding-top:100px;
 }
 
@@ -30,26 +30,79 @@ margin-bottom:50px;
 /* ABOUT HERO */
 
 .about-company{
-display:grid;
-grid-template-columns:1fr 1fr;
-align-items:center;
-gap:60px;
-max-width: 1500px;
-min-height:400px;
-padding-top:30px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:80px;
+
+    max-width:1400px;
+    width:100%;
+
+    min-height:90vh; /* KEY FIX */
+    padding-top:60px;
+
+    background: url(images/OG.jpg) no-repeat center/cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+/* DARK OVERLAY FOR ABOUT HERO */
+
+.about-company::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    z-index:1;
 }
 
 /* CARD */
 
 .about-card{
-background:rgba(255,255,255,0.08);
-padding:40px;
-border-radius:18px;
-backdrop-filter:blur(8px);
-box-shadow:0 10px 40px rgba(0,0,0,0.3);
-max-width:520px;
+background: transparent;
+padding: 0;
+border-radius: 0;
+backdrop-filter: none;
+box-shadow: none;
+max-width: 600px;
+position: relative;
+z-index: 2;
 }
 
+.about-label {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #f4a261;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.about-hero-title {
+  font-size: 64px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+
+.about-hero-gold {
+  display: block;
+  color:#f4a261;
+}
+
+.about-hero-gold {
+  display: block;
+  color: #f4a261;
+}
+
+.about-lead {
+  line-height: 1.8;
+  opacity: 0.9;
+  margin-bottom: 24px;
+}
 
 .about-card h1{
 font-size:40px;
@@ -75,6 +128,8 @@ display:flex;
 gap:30px;
 justify-content:flex-start;
 margin-top:30px;
+position: relative;
+z-index: 2;
 }
 
 .stat{
@@ -190,6 +245,8 @@ gap:50px;
 max-width:1300px;   /* allow wider space */
 margin-left:auto;
 margin-right:auto;
+background: #111827;
+padding: 90px 10%;
 }
 
 .ceo-card{
@@ -233,9 +290,14 @@ max-width:700px;
 /* SUPPORT DEPARTMENT */
 
 .support-team{
-margin-top:40px; /* correct syntax and provide spacing above HR section */
+margin-top:40px;
 text-align:center;
+
+max-width:1200px;   /* allow more space */
+margin-left:auto;
+margin-right:auto;
 }
+
 
 .support-grid{
 display:flex;
@@ -246,13 +308,16 @@ overflow:hidden;
 
 .support-card{
 position:relative;
-flex:0 0 220px;
-height:260px;
-border-radius:16px;
+flex:0 0 260px;   /* card width */
+height:300px;     /* rectangle height */
+
+border-radius:0;  /* remove rounded corners */
 overflow:hidden;
+
 cursor:pointer;
 transition:transform .3s ease;
 }
+
 
 .support-card img{
 width:100%;
@@ -299,14 +364,14 @@ opacity:.8;
 
 .slider-wrapper{
 position:relative;
-max-width:900px;
+max-width:1200px;
 margin:auto;
 }
 
 
 .slider{
 display:flex;
-gap:30px;
+gap:25px;
 overflow:hidden;
 scroll-behavior:smooth;
 }
@@ -339,11 +404,11 @@ background:#f4a261;
 }
 
 .slide-btn.left{
-left:-50px;
+left:-60px;
 }
 
 .slide-btn.right{
-right:-50px;
+right:-60px;
 }
 
 /* MODAL */

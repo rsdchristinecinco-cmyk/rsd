@@ -1,0 +1,164 @@
+/* MISSION & VISION CSS */
+
+.mission-vision {
+    padding: 100px 10%;
+    background: #f4f6fb;
+    position: relative;
+    overflow: hidden;
+}
+
+.mission-vision::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.06) 0,
+        rgba(0, 0, 0, 0.06) 1px,
+        transparent 10px,
+        transparent 100px
+    ),
+    repeating-linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.06) 0,
+        rgba(0, 0, 0, 0.06) 1px,
+        transparent 10px,
+        transparent 100px
+            ),
+    repeating-radial-gradient(
+        circle at 0 0,
+        rgba(0, 0, 0, 0.08) 0,
+        rgba(0, 0, 0, 0.08) 1px,
+        transparent 10px,
+        transparent 100px   
+    ),
+    radial-gradient(circle at top left, rgba(244, 162, 97, 0.14), transparent 45%),
+    radial-gradient(circle at bottom right, rgba(64, 115, 251, 0.1), transparent 45%);
+    opacity: 0.78;
+    z-index: -1;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.section-title {
+    font-family: 'Marcellus', serif;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #111;
+    letter-spacing: 1px;
+}
+
+.mv-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px;
+    align-items: start;
+}
+
+.mv-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid rgba(244, 162, 97, 0.5);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.2);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    background: rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(10px);
+    animation: float 10s ease-in-out infinite;
+    min-height: 450px;
+}
+
+.mv-body {
+    flex: 1;
+}
+
+.mv-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 26px 62px rgba(0, 0, 0, 0.35);
+    filter: grayscale(0%);
+}
+
+.mv-image {
+    height: 260px;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%);
+    transition: filter 0.35s ease;
+}
+
+.mv-card:hover .mv-image {
+    filter: none;
+}
+
+
+.mv-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.32);
+    transition: opacity 0.35s ease;
+}
+
+.mv-card:hover::before {
+    opacity: 0.1;
+}
+
+.mv-tag {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    padding: 10px 16px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    color: #f4a261;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    font-size: 12px;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.mv-body {
+    padding: 28px 24px 26px;
+    background: rgba(255, 255, 255, 0.92);
+}
+
+.mv-title {
+    font-family: 'Marcellus', serif;
+    font-size: 26px;
+    margin: 0 0 14px;
+    letter-spacing: 0.5px;
+    color: #111;
+}
+
+.mv-text {
+    margin: 0;
+    color: rgba(27, 31, 46, 0.78);
+    line-height: 1.7;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .mv-grid {
+        grid-template-columns: 1fr;
+    }
+    .mission-vision {
+        padding: 80px 6%;
+    }
+}
